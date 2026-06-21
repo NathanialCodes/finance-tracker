@@ -2,11 +2,13 @@
 __pycache__/
 *.pyc
 
-# Virtual environment (we add this next session)
+# Virtual environment
 .venv/
 
-# Personal financial data — keep your real numbers OUT of the repo
+# Personal financial data (not committed)
 tracker.xlsx
+
+# Local learning/scratch files
 budget.py
 costs.json
 learnpandas.py
