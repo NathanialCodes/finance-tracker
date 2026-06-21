@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment (we add this next session)
+.venv/
+
+# Personal financial data — keep your real numbers OUT of the repo
+tracker.xlsx
+budget.py
+costs.json
+learnpandas.py
