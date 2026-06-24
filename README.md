@@ -39,3 +39,11 @@ Make a copy of it, rename the copy to `tracker.xlsx`, then run:
 ## Built with
 
 Python, pandas, yfinance, openpyxl.
+
+
+## £1M-by-35 Monte Carlo
+
+A simulation that runs 10,000 market paths to estimate the probability of reaching a net-worth target by a given age, under different return and savings-growth assumptions.
+It reports the probability of clearing the target and the downside (10th Percentile) outcome.
+
+![Distribution of net worth aross 10,000 simulations](outcomes_age35.png)
