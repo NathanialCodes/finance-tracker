@@ -32,10 +32,7 @@ scenarios = [
     ("Growing, 6%", 0.06, 0.03)
 ]   
 
-
-mean_return = 0.045
 volatility = 0.17
-contribution_growth = 0.03
 
 print(f"{'Scenario':<16}{'Age 35':>9}{'Age 36':>9}{'Age 37':>9}")
 
@@ -63,6 +60,5 @@ plt.xlabel("Net worth at age 35 (£)")
 plt.ylabel("number of simulations")
 plt.title("Distribution of £1m outcomes - growing 4.5% case, age 35")
 plt.legend()
-plt.savefig("outcomes_age35.png", dpi=150)
 plt.show()
 
