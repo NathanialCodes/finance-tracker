@@ -1,17 +1,14 @@
 import yfinance as yf
 
+def fetch_latest(ticker):
+    data = yf.Ticker(ticker).history(period="5d")
+    return data["Close"].dropna().iloc[-1]
+
 def get_prices():
-    vuag = yf.Ticker("VUAG.L")
-    vuag_price = vuag.history(period="5d")["Close"].dropna().iloc[-1]
-    
-    gdx = yf.Ticker("GDX")
-    gdx_price_usd = gdx.history(period="5d")["Close"].dropna().iloc[-1]
-    
-    gu = yf.Ticker("GBPUSD=X")
-    gbp_usd_rate = gu.history(period="5d")["Close"].dropna().iloc[-1] #GBP/USD exhange rate
-    
-    prices = {
-        "VUAG.L": vuag_price,
-        "GDX": gdx_price_usd / gbp_usd_rate,
+    gbp_usd = fetch_latest("GBPUSD=X")
+    return {
+        "VUAG.L": fetch_latest("VUAG.L"),
+        "GDX": fetch_latest("GDX") / gbp_usd,
+        "GC=F": fetch_latest("GC=F") / gbp_usd, #gold, USD/oz -> GBP/oz
+        "SI=F": fetch_latest("SI=F") / gbp_usd, #silver, USD/oz -> GBP/oz
     }
-    return prices

@@ -10,4 +10,4 @@ df["live_value"] = df["live_value"].fillna(df["value"]) #fills in the NaN values
 
 alloc = df.groupby("class")["live_value"].sum()
 print((alloc / alloc.sum() * 100).round(1))
-print(df["live_value"].sum()) # total live networth
+print(df["live_value"].sum().round(2)) # total live networth
