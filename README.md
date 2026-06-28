@@ -17,6 +17,8 @@ the market rather than staying static after I typed them.
 - `main.py` - entry point: loads holdings, fetches prices, reports net worth and allocation
 - `prices.py` - fetches live prices and the GBP/USD exchange rate
 - `holdings.py` - loads holdings from the spreadsheet
+- `monte_carlo.py` - the simulation engine 
+- `app.py` - interactive Streamlit dashboard over the model
 
 ## Running it
 
@@ -34,6 +36,7 @@ Make a copy of it, rename the copy to `tracker.xlsx`, then run:
 ## Notes
 
 - Real holdings data is excluded via `.gitignore`; the committed sample uses fake numbers.
+- config.json holds personal assumptions and is kept out of the repo, with the code using demo defaults
 - Prices come from Yahoo Finance via yfinance and are delayed about 15–20 minutes.
 
 ## Built with
@@ -47,3 +50,10 @@ A simulation that runs 10,000 market paths to estimate the probability of reachi
 It reports the probability of clearing the target and the downside (10th percentile) outcome.
 
 ![Distribution of net worth across 10,000 simulations](outcomes_age35.png)
+
+## Interactive dashboard
+
+A Streamlit dashboard wraps the projection model: sliders for the expected return, volatility and contribution growth drive the simulation live. 
+The probablity of reaching £1M and the full distribution of outcomes are recalculated on every slider change.
+
+    streamlit run app.py
