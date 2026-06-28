@@ -41,7 +41,7 @@ Make a copy of it, rename the copy to `tracker.xlsx`, then run:
 
 ## Built with
 
-Python, pandas, yfinance, openpyxl, numpy, matplotlib.
+Python, pandas, yfinance, openpyxl, numpy, matplotlib, streamlit.
 
 
 ## £1M-by-35 Monte Carlo
@@ -54,6 +54,6 @@ It reports the probability of clearing the target and the downside (10th percent
 ## Interactive dashboard
 
 A Streamlit dashboard wraps the projection model: sliders for the expected return, volatility and contribution growth drive the simulation live. 
-The probablity of reaching £1M and the full distribution of outcomes are recalculated on every slider change.
+The probability of reaching £1M by ages 35, 36 and 37, as well as the full distribution of outcomes, is recalculated whenever a slider is changed.
 
     streamlit run app.py
