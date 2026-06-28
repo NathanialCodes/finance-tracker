@@ -1,9 +1,10 @@
 # Personal Finance Tracker
 
-A Python tool that calculates net worth and asset split from live market data. 
-I built it to replace a spreadsheet I was maintaining by hand in Excel.
-The main goal was to have figures that automatically update themselves from 
-the market rather than staying static after I typed them.
+A set of Python tools I built to track and project my personal finances. It started as a net-worth tracker to replace a spreadsheet I was maintaining by hand in Excel. The aim was to pull live market prices so figures wouldn't become outdated the moment I typed them.
+
+From there, it grew into a Monte Carlo model that estimates my probability of reaching a £1M net worth, and an interactive dashboard that lets me adjust model assumptions and instantly see how the projections change.
+
+**Live demo:** https://nathanial-1m-projection.streamlit.app/
 
 ## What it does
 
@@ -52,6 +53,10 @@ It reports the probability of clearing the target and the downside (10th percent
 ![Distribution of net worth across 10,000 simulations](outcomes_age35.png)
 
 ## Interactive dashboard
+
+**[Try it live →](https://nathanial-1m-projection.streamlit.app/)**
+
+![Dashboard with sliders for the model assumptions](dashboard.png)
 
 A Streamlit dashboard wraps the projection model: sliders for the expected return, volatility and contribution growth drive the simulation live. 
 The probability of reaching £1M by ages 35, 36 and 37, as well as the full distribution of outcomes, is recalculated whenever a slider is changed.
